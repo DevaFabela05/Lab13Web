@@ -54,5 +54,5 @@ Tujuannya untuk menghapus data toilet dari database toilet
 ![Syntax](sscd/hps.png)
 
 ### 16.	Hasil
-Inilah hasil dari Project UAS saya
+Inilah hasil dari Project UAS saya, dan Berikut linknya https://youtu.be/hFhhosy5eLU
 ![hasil](sscd/hsl.png)
