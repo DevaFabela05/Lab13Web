@@ -4,7 +4,7 @@
     font-family: "Quicksand", sans-serif ;
 }
 body{
-    background-color: #fff;
+    background-color: #a553e3;
 }
 *{
     color: inherit;
@@ -15,11 +15,12 @@ body{
     height: 100vh;
     justify-content: center;
     align-items: center;
+
 }
 .box-login{
     width: 300px;
     min-height: 200px;
-    border: 1px solid #ccc;
+    border: 1px solid #e30c0c;
     background-color: #fff;
     padding: 15px;
     border-radius: border-box;
@@ -36,7 +37,7 @@ body{
 }
 .btn {
     padding: 8px 15px;
-    background-color: black;
+    background-color: #C70039;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -70,6 +71,7 @@ header ul li a {
 }
 .section {
     padding:25px 0;
+   
 }
 .box {
     background-color: #fff;

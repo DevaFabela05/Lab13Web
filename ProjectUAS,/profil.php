@@ -1,8 +1,12 @@
 <?php
 session_start();
+include 'koneksi.php'
 if($_SESSION['status_login'] != true){
     echo '<script>window.location="login.php"</script>';
 }
+
+$query = mysqli_query($conn, "SELECT * FROM users WHERE id = '".$_SESSION['id']."'");
+$d = mysqli_fetch_object($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,10 +34,18 @@ if($_SESSION['status_login'] != true){
     </header>
     <div class="section">
         <div class="container">
-            <h3>Dashboard</h3>
+            <h3>Profil</h3>
             <div class="box">
-                <h4>Selamat Datang <?php echo $_SESSION['a_global']->nama ?> di Checklist Toilet</h4>
-
+                <form action="" method="POST">
+                    <input type="text" name="username" placeholder="Username" class="input-control"  required>
+                    <input type="password" name="pass" placeholder="Password" class="input-control" required>
+                    <input type="text" name="nama" placeholder="Nama" class="input-control" required>
+                    <input type="email" name="email" placeholder="Email" class="input-control" required>
+                    <input type="text" name="status" placeholder="Status" class="input-control" required>
+                    <input type="text" name="role" placeholder="Role" class="input-control" required>
+                    <input type="submit" name="submit" value="Ubah Profil" class="btn">
+                </form>
+                
             </div>
         </div>
     </div>

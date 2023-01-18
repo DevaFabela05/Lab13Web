@@ -9,7 +9,7 @@
 </head>
 <body id="bg-login">
    <div class="box-login">
-   <h2>LOGIN</h2>
+   <h2>Login</h2>
    <form action="" method="post">
     <input type="text" name="user" placeholder="Username" class="input-control">
     <input type="password" name="pass" placeholder="Password" class="input-control">
@@ -33,9 +33,6 @@
     }else{
         echo '<script>alert("Username atau Password Anda Salah!")</script>';
     }
-
-    
-
    }
    ?>
    </div>

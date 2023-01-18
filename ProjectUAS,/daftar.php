@@ -4,9 +4,27 @@ include 'koneksi.php';
 if($_SESSION['status_login'] != true){
     echo '<script>window.location="login.php"</script>';
 }
-$query = mysqli_query($conn, "SELECT * FROM checklist WHERE id = '".$_SESSION['id']."'");
-$d = mysqli_fetch_object($query);
+
+if (isset($_POST['submit']))
+{
+    $tanggal = $_POST['tanggal'];
+    $toilet_id = $_POST['toilet_id'];
+    $kloset = $_POST['kloset'];
+    $wastafel = $_POST['wastafel'];
+    $lantai = $_POST['lantai'];
+    $dinding = $_POST['dinding'];
+    $kaca = $_POST['kaca'];
+    $bau = $_POST['bau'];
+    $sabun = $_POST['sabun'];
+    $users_id = $_POST['users_id'];
+
+    $sql = 'INSERT INTO checklist (tanggal, toilet_id, kloset, wastafel, lantai, dinding, kaca, bau, sabun, users_id) ';
+    $sql .= "VALUE ('{$tanggal}', '{$toilet_id}', '{$kloset}', '{$wastafel}', '{$lantai}', '{$dinding}', '{$kaca}', '{$bau}', '{$sabun}', '{$users_id}')";
+    $result = mysqli_query($conn, $sql);
+    header('location: data.php');
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +32,7 @@ $d = mysqli_fetch_object($query);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kebersihan Toilet</title>
+    <title>Checklist Toilet</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 </head>
@@ -22,17 +40,17 @@ $d = mysqli_fetch_object($query);
 <body>
     <header>
         <div class="container">
-            <h1><a href="dashboard.php">Kebersihan Toilet</a></h1>
+            <h1><a href="dashboard.php">Checklist Toilet</a></h1>
             <ul>
                 <li><a href="dashboard.php">Dashboard</a></li>
-                <li><a href="daftar.php">Daftar Toilet</a></li>
+                <li><a href="daftar.php">List Toilet</a></li>
                 <li><a href="data.php">Data Toilet</a></li>
             </ul>
         </div>
     </header>
     <div class="section">
         <div class="container">
-            <h3>Daftar Toilet</h3>
+            <h3>List Toilet</h3>
             <div class="box">
                 <form action="" method="post">
                     <table border="0" class="table-form">
@@ -40,7 +58,7 @@ $d = mysqli_fetch_object($query);
                             <td>Tanggal</td>
                             <td>:</td>
                             <td>
-                                <input type="date" name="tanggal" class="input-control" >
+                                <input type="datetime-local" name="tanggal" class="input-control" >
                             </td>
                             </tr>
                             <tr>
@@ -98,7 +116,7 @@ $d = mysqli_fetch_object($query);
                             </td>
                         </tr>
                         <tr>
-                            <td>Sabun</td>
+                            <td>Bau</td>
                             <td>:</td>
                             <td>
                             <input type="checkbox" name="sabun" value="1">Ada
@@ -107,7 +125,7 @@ $d = mysqli_fetch_object($query);
                             </td>
                         </tr>
                         <tr>
-                            <td>Bau</td>
+                            <td>Sabun</td>
                             <td>:</td>
                             <td>
                             <input type="checkbox" name="bau" value="1">Ya
