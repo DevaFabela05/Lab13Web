@@ -37,11 +37,7 @@ if($_SESSION['status_login'] != true){
             </div>
         </div>
     </div>
-    <footer>
-        <div class="container">
-           <small>Copyright &copy; 2023 - ChecklistToilet.</small> 
-        </div>
-    </footer>
+    <?php require('footer.php'); ?>
 </body>
 
 </html>

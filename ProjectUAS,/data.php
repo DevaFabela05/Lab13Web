@@ -32,7 +32,7 @@ if($_SESSION['status_login'] != true){
         <div class="container">
             <h3>Data Toilet</h3>
             <div class="box">
-                <table class="table">
+                <table border="1" cellpadding="10" cellspacing="0" class="table">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -77,11 +77,7 @@ if($_SESSION['status_login'] != true){
             </div>
         </div>
     </div>
-    <footer>
-        <div class="container">
-           <small>Copyright &copy; 2023 - KebersihanToilet.</small> 
-        </div>
-    </footer>
+    <?php require('footer.php'); ?>
 </body>
 
 </html>

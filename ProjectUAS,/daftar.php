@@ -145,11 +145,7 @@ if (isset($_POST['submit']))
             </div>
         </div>
     </div>
-    <footer>
-        <div class="container">
-           <small>Copyright &copy; 2023 - KebersihanToilet.</small> 
-        </div>
-    </footer>
+    <?php require('footer.php'); ?>
 </body>
 
 </html>
